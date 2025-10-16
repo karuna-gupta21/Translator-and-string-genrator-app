@@ -1,1 +1,1 @@
-# Translator-and-string-genrator-app
+Translator-and-string-genrator-app
