@@ -28,17 +28,17 @@ const Texttranslate = () => {
   }, []);
 
   const detectLanguage = async (text: string) => {
-    if (!text.trim()) return "en";
+  
     try {
       const res = await axios.post(
         "https://libretranslate.com/detect",
         { q: text },
         { headers: { "Content-Type": "application/json" } }
       );
-      return res.data[0]?.language || "en";
+      return res.data[0]?.language ;
     } catch (err) {
       console.error("Language detection error:", err);
-      return "en";
+      
     }
   };
 
@@ -56,6 +56,7 @@ const Texttranslate = () => {
           : sourceLanguage;
 
       const res = await axios.post(
+        
         "https://libretranslate.com/translate",
         {
           q: inputText,
